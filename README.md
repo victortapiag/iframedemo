@@ -4,7 +4,7 @@ This repository contains several sample applications that show you how to integr
 
 ## Configuration
 
-All of the samples share a single configuration file, [config.js](config.js). The config uses environment variables which can be either exported in the shell or stored in a file named `testenv` in this directory. See [dotenv](https://www.npmjs.com/package/dotenv) for more details on this file format. It may look something like:
+All of the samples share a single configuration file, [config.js](config.js). The config uses environment variables which can be either exported in the shell or stored in a file named `.env` in this directory. See [dotenv](https://www.npmjs.com/package/dotenv) for more details on this file format. It may look something like:
 
 ```ini
 ISSUER=https://yourOktaDomain.com/oauth2/default
@@ -29,13 +29,13 @@ Please find the sample that fits your use-case from the table below.
 ## Running the tests
 
 Before running the tests you will need to gather values for ALL required environment variables.
-You can export these variables in the shell or store them in a file named `testenv` in the current directory.
+You can export these variables in the shell or store them in a file named `.env` in the current directory.
 
 You will need two Okta applications, one Web app and one SPA app. Save the clientId for the Web app as `CLIENT_ID` and the clientId for the SPA app as `SPA_CLIENT_ID`
 
 The Web app needs a couple of settings in the Developer console:
-Add a `Login redirect URI`: `http://localhost:8080/authorization-code/callback`
-Add a `Logout redirect URI`: `http://localhost:8080`
+Add a `Login redirect URI`: `http://localhost:3000/authorization-code/callback`
+Add a `Logout redirect URI`: `http://localhost:3000`
 
 You will also need credentials for a test user.
 

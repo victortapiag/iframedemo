@@ -17,7 +17,7 @@ Before running this sample, you will need the following:
 To run this application, you first need to clone this repo and then enter into this directory:
 
 ```bash
-git clone https://github.com/okta/samples-nodejs-express-4.git
+git clone https://github.com/victortapiag/iframedemo.git
 cd samples-nodejs-express-4/
 ```
 
@@ -33,7 +33,7 @@ Now you need to gather the following information from the Okta Developer Console
 
 - **Issuer** - This is the URL of the authorization server that will perform authentication.  All Developer Accounts have a "default" authorization server.  The issuer is a combination of your Org URL (found in the upper right of the console home page) and `/oauth2/default`. For example, `https://dev-1234.okta.com/oauth2/default`.
 
-These values must exist as environment variables. They can be exported in the shell, or saved in a file named `testenv`, at the root of this repository. (This is the parent directory, relative to this README) See [dotenv](https://www.npmjs.com/package/dotenv) for more details on this file format.
+These values must exist as environment variables. They can be exported in the shell, or saved in a file named `.env`, at the root of this repository. (This is the parent directory, relative to this README) See [dotenv](https://www.npmjs.com/package/dotenv) for more details on this file format.
 
 ```ini
 ISSUER=https://yourOktaDomain.com/oauth2/default
@@ -44,10 +44,10 @@ CLIENT_SECRET=1234XXX
 With variables set, start the app server:
 
 ```
-npm run custom-login-server
+node okta-hosted-login/server.js
 ```
 
-Now navigate to http://localhost:8080 in your browser.
+Now navigate to http://localhost:3000 in your browser.
 
 If you see a home page that prompts you to login, then things are working!  Clicking the **Log in** button will render a custom login page, served by the Express application, that uses the Okta Sign-In Widget to perform authentication.
 
