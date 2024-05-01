@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    {{>head}}
+  </head>
+  <body id="samples">
+
+    {{>menu}}
+
+    <div id="content" class="ui padded grid relaxed">
+      <div id="doc" class="column eight wide">
+        <div class="doc-overview">
+          <h2 class="ui dividing header" data-se="overview-doc-header">
+            My Profile Management Window
+          </h2>
+          <iframe class="settings-iframe" src="{{url}}" width="550" height="600" title="Settings frame"></iframe>
+        </div>
+        
+      </div>
+
+      {{>server-config}}
+
+    </div>
+  </body>
+</html>

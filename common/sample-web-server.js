@@ -22,6 +22,7 @@ const mustacheExpress = require('mustache-express');
 const path = require('path');
 const { ExpressOIDC } = require('@okta/oidc-middleware');
 
+
 const templateDir = path.join(__dirname, '..', 'common', 'views');
 const frontendDir = path.join(__dirname, '..', 'common', 'assets');
 
@@ -83,6 +84,15 @@ module.exports = function SampleWebServer(sampleConfig, extraOidcOptions, homePa
     });
   });
 
+  
+
+  app.get("/iframe", oidc.ensureAuthenticated(), (req, res) => {
+    res.render("iframe",{
+      url: "https://oiebeyondwf102.oktapreview.com/user/settings/account"
+    });
+  });
+
+ 
   oidc.on('ready', () => {
     // eslint-disable-next-line no-console
     app.listen(sampleConfig.port, () => console.log(`App started on port ${sampleConfig.port}`));

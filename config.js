@@ -3,7 +3,7 @@ const dotenv = require('dotenv');
 const fs = require('fs');
 
 // Read environment variables from "testenv". Override environment vars if they are already set. https://www.npmjs.com/package/dotenv
-const TESTENV = path.resolve(__dirname, 'testenv');
+const TESTENV = path.resolve(__dirname, '.env');
 if (fs.existsSync(TESTENV)) {
   const envConfig = dotenv.parse(fs.readFileSync(TESTENV));
   Object.keys(envConfig).forEach((k) => {
@@ -19,12 +19,12 @@ var OKTA_TESTING_DISABLEHTTPSCHECK = process.env.OKTA_TESTING_DISABLEHTTPSCHECK 
 
 module.exports = {
   webServer: {
-    port: 8080,
+    port: 3000,
     oidc: {
       clientId: CLIENT_ID,
       clientSecret: CLIENT_SECRET,
       issuer: ISSUER,
-      appBaseUrl: 'http://localhost:8080',
+      appBaseUrl: 'http://localhost:3000',
       scope: 'openid profile email',
       testing: {
         disableHttpsCheck: OKTA_TESTING_DISABLEHTTPSCHECK
@@ -32,7 +32,7 @@ module.exports = {
     },
   },
   resourceServer: {
-    port: 8000,
+    port: 4000,
     oidc: {
       clientId: SPA_CLIENT_ID,
       issuer: ISSUER,

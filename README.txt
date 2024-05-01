@@ -53,5 +53,3 @@ npm install
 node okta-hosted-login/server.js
 ```
 With all variables set, run `npm test`
-# iframe
-Added to my Repo
